@@ -275,3 +275,41 @@ footer {
 .pub-links {
   font-size: 0.85rem;
 }
+
+@media (max-width: 768px) {
+  #banner {
+    height: 15vh;              /* taller on mobile */
+    min-height: 120px;
+  }
+
+  #title {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  #title h1 {
+    font-size: 2.1rem;
+  }
+
+  #title p {
+    font-size: 0.95rem;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: row;     /* KEEP SINGLE ROW */
+    align-items: center;
+    padding: 0.35rem 1rem;
+    min-height: 48px;
+  }
+
+  .header-title {
+    font-size: 0.9rem;
+  }
+
+  .header-nav {
+    gap: 1rem;
+  }
+}
