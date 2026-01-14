@@ -193,7 +193,7 @@ footer {
 }
 
 .about-email {
-  font-size: 0.85rem;
+  font-size: 1rem;
   margin-bottom: 0.5rem;
 }
 
@@ -205,12 +205,12 @@ footer {
 .about-icons {
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.7rem;
 }
 
 .about-icons img {
-  width: 18px;
-  height: 18px;
+  width: 26px;
+  height: 26px;
   filter: invert(1);
   opacity: 0.8;
 }
