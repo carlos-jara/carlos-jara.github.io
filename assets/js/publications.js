@@ -47,9 +47,36 @@ function renderPublications(entries) {
 
 function formatAuthors(authors) {
   return authors
-    .replace(/ and /g, ", ")
+    .split(" and ")
+    .map(author => {
+      author = author.trim();
+
+      let surname, givenNames;
+
+      if (author.includes(",")) {
+        // BibTeX format: Last, First Middle
+        const parts = author.split(",");
+        surname = parts[0].trim();
+        givenNames = parts.slice(1).join(" ").trim();
+      } else {
+        // Plain format: First Middle Last
+        const parts = author.split(/\s+/);
+        surname = parts.pop();
+        givenNames = parts.join(" ");
+      }
+
+      const initials = givenNames
+        .split(/[\s-]+/)
+        .filter(Boolean)
+        .map(n => n[0].toUpperCase())
+        .join("");
+
+      return `${surname}, ${initials}.`;
+    })
+    .join(", ")
     .replace("Your Name", "<strong>Your Name</strong>");
 }
+
 
 function journalSlug(name) {
   return name
